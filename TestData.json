@@ -1,0 +1,79 @@
+{
+  "info": {
+    "name": "Football Service - Manchester United",
+    "_postman_id": "unique-id-here",
+    "description": "API tests for Football microservice with Manchester United sample data",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Team - Manchester United",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8080/api/teams", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "teams"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Manchester United\",\n  \"country\": \"England\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Teams",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/teams", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "teams"] }
+      }
+    },
+    {
+      "name": "Create Player - Marcus Rashford",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8080/api/players", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "players"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Marcus\",\n  \"lastName\": \"Rashford\",\n  \"position\": \"Forward\",\n  \"team\": { \"id\": 1 }\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Player - Bruno Fernandes",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8080/api/players", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "players"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Bruno\",\n  \"lastName\": \"Fernandes\",\n  \"position\": \"Midfielder\",\n  \"team\": { \"id\": 1 }\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Players",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/players", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "players"] }
+      }
+    },
+    {
+      "name": "Create Manager - Erik ten Hag",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8080/api/managers", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "managers"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Erik ten Hag\",\n  \"email\": \"erik.tenhag@manutd.com\",\n  \"team\": { \"id\": 1 }\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Managers",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/managers", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["api", "managers"] }
+      }
+    }
+  ]
+}
